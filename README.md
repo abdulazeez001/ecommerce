@@ -6,8 +6,8 @@ This project involves creating a microservices architecture using NestJS that co
 
 ## Table of Contents
 
-- [Microservices Overview]()
 - Architecture Diagram
+- [Microservices Overview]()
 - [Requirements]()
 - [Task Instructions]()
 - [Deliverables]()
@@ -16,6 +16,10 @@ This project involves creating a microservices architecture using NestJS that co
 - [Technologies Used]()
 - [Contributing]()
 - [License]()
+
+## Architecture Diagram
+
+![1727968302576](image/README/1727968302576.png)
 
 ## Microservices Overview
 
@@ -33,10 +37,6 @@ This project involves creating a microservices architecture using NestJS that co
 
 - Manages orders that include products.
 - Caches product details to improve performance.
-
-## Architecture Diagram
-
-![1727966504231](image/README/1727966504231.png)
 
 ## Requirements
 
