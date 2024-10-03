@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package productserviceproto;
+
+service ProductService {
+  rpc UpdateProduct(UpdateProductRequest) returns (ProductResponse);
+}
+
+message UpdateProductRequest {
+  string product_id = 1;
+  Product product = 2;
+}
+
+message ProductResponse {
+  string response = 1;
+}
+
+
+message Product {
+  double price = 1;           // Total price of the order
+  string description = 2;         // Hash of products for integrity
+  string owner_id = 3;           // ID of the customer placing the order
+  string ownerAddress = 4;          // Status of the order (e.g., "Pending", "Completed")
+
+}
+

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package orderserviceproto;
+
+service OrderService {
+  rpc UpdateOrder(UpdateOrderRequest) returns (OrderResponse);
+}
+
+message UpdateOrderRequest {
+  string order_id = 1;
+  Order data = 2;
+}
+
+message Order {
+  repeated string product_ids = 1; // List of product IDs
+  repeated int32 quantity = 2;      // Corresponding quantities for each product
+  double total_price = 3;           // Total price of the order
+  string products_hash = 4;         // Hash of products for integrity
+  string customer_id = 5;           // ID of the customer placing the order
+  string order_status = 6;          // Status of the order (e.g., "Pending", "Completed")
+  string order_date = 7;            // Date when the order was placed
+}
+
+message OrderResponse {
+  string response = 1;              // Response message, e.g., "Order updated successfully"
+}

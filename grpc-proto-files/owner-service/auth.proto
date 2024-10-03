@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ownerserviceproto;
+
+// Service definition
+service UserService {
+    // Retrieves owner information based on the given ID
+    rpc GetUser(GetUserRequest) returns (GetUserResponse);
+
+    // Validates the token and returns the associated owner information
+    rpc ValidateUserToken(ValidateUserTokenRequest) returns (ValidateUserTokenResponse);
+}
+
+// Request message to get an owner by their ID
+message GetUserRequest {
+    string user_id = 1;  // The unique identifier for the owner
+}
+
+// Response message containing the owner information
+message GetUserResponse {
+    string response = 1;  // The name of the owner
+}
+
+// Request message for validating an authentication token
+message ValidateUserTokenRequest {
+    string token = 1;  // The authentication token to be validated
+}
+
+// Response message for token validation, returning the owner's name
+message ValidateUserTokenResponse {
+    string response = 1;
+}
